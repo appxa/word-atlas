@@ -113,7 +113,7 @@ Ciguang یک برنامه حفظ لغات آیلتس با تصاویر و زمی
 به **Node.js 20+** و npm نیاز دارد. انبار شامل تصاویر و صداهای ضبط شده کامل است و ممکن است دانلود برای اولین بار زمان زیادی ببرد.
 
 ```bash
-git clone --depth 1 https://github.com/designfuchen/word-atlas.git
+git clone --depth 1 https://github.com/appxa/word-atlas.git
 cd word-atlas
 npm ci
 npm run dev
@@ -184,7 +184,7 @@ b2_environment = [w for w in words if w["cefr"] == "B2" and w["topic"] == "envir
 
 وقتی مشکلی پیدا کردید، لطفاً **شناسه ورودی، مراحل بازتولید و نتایج مورد انتظار** را پیوست کنید. اگر فرهنگ لغت یا مبنای قابل اعتماد دیگری برای تصحیح محتوا دارید، لطفاً آن را نیز ارائه دهید.
 
-- [گزارش یک مشکل](https://github.com/designfuchen/word-atlas/issues/new/choose): اصلاح مدخل‌ها، مشکلات رابط یا پیشنهادهای استفاده.
+- [گزارش یک مشکل](https://github.com/appxa/word-atlas/issues/new/choose): اصلاح مدخل‌ها، مشکلات رابط یا پیشنهادهای استفاده.
 - [راهنمای مشارکت] (CONTRIBUTING.md): همگام سازی داده ها، مشخصات کد و بررسی های پیش از ارسال.
 - [Security Policy] (SECURITY.md): روش بازخورد برای مسائل امنیتی.
 
