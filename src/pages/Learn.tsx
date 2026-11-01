@@ -111,7 +111,7 @@ function Intro({ step }: { step: Step }) {
       <EntryView entry={entry} mode="intro" />
       <footer className="learn-actions">
         <button className="btn btn-primary btn-xl" onClick={next} autoFocus>
-          شناختی  <ArrowRight size={20} />
+          فهمیدم، ادامه <ArrowRight size={20} />
         </button>
         <span className="hint-keys">
           <kbd>Enter</kbd> ادامه
