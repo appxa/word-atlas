@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://0xlei.tech/words/"><img src="docs/assets/cover-v2.jpg" alt="واژه‌نگار Word Atlas — یک واژه، یک تصویر" width="100%"></a>
+<a href="https://appxa.github.io/word-atlas/"><img src="docs/assets/cover-v2.jpg" alt="واژه‌نگار Word Atlas — یک واژه، یک تصویر" width="100%"></a>
 
 # واژه‌نگار · Word Atlas
 
@@ -8,7 +8,7 @@
 
 7298 ورودی آیلتس · تصاویر اصلی · تلفظ انگلیسی و آمریکایی · بررسی فاصله FSRS
 
-[**امتحانش کن ↗**](https://0xlei.tech/words/) / [معرفی ۴۸ ثانیه‌ای](docs/assets/launch.mp4) / [دانلود واژه‌نامه](data/) / [English](README.en.md)
+[**امتحانش کن ↗**](https://appxa.github.io/word-atlas/) / [معرفی ۴۸ ثانیه‌ای](docs/assets/launch.mp4) / [دانلود واژه‌نامه](data/) / [English](README.en.md)
 
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-17283B?style=flat-square)](LICENSE)
 [![Dataset: CC BY 4.0](https://img.shields.io/badge/Dataset-CC_BY_4.0-AD5038?style=flat-square)](CONTENT_LICENSE.md)
@@ -87,9 +87,9 @@ Ciguang یک برنامه حفظ لغات آیلتس با تصاویر و زمی
 
 | | |
 |---|---|
-| 🇬🇧 تلفظ انگلیسی | [ترک کردن /əˈbændən/](https://0xlei.tech/words/atlas/audio/uk/abandon.mp3) |
-| 🇺🇸 تلفظ آمریکایی | [ترک کردن /əˈbændən/](https://0xlei.tech/words/atlas/audio/us/abandon.mp3) |
-| 📖 جمله خوانی مثال | [ما مجبور شدیم ماشین خود را در برف رها کنیم.](https://0xlei.tech/words/atlas/audio/ex/abandon.mp3) |
+| 🇬🇧 تلفظ انگلیسی | [ترک کردن /əˈbændən/](https://appxa.github.io/word-atlas/atlas/audio/uk/abandon.mp3) |
+| 🇺🇸 تلفظ آمریکایی | [ترک کردن /əˈbændən/](https://appxa.github.io/word-atlas/atlas/audio/us/abandon.mp3) |
+| 📖 جمله خوانی مثال | [ما مجبور شدیم ماشین خود را در برف رها کنیم.](https://appxa.github.io/word-atlas/atlas/audio/ex/abandon.mp3) |
 
 همه 7298 کلمه دارای تلفظ انگلیسی، تلفظ آمریکایی و جملات مثال با صدای بلند خوانده می شوند و جمله دوم 1011 کلمه کلیدی نیز با صدای بلند خوانده می شود.
 
@@ -97,10 +97,10 @@ Ciguang یک برنامه حفظ لغات آیلتس با تصاویر و زمی
 
 | | |
 |---|---|
-| 🎙 **دوبله صفحه باز** | ["به باز کردن درب آیلتس خوش آمدید"](https://0xlei.tech/words/sfx/splash-voice.mp3): غبار ستاره‌ها «واژه‌نگار» را می‌سازد و دروازه باز می‌شود |
-| 🌌 **دوبله نقشه ستاره** | ["این نقشه ستاره واژگان شماست. هر بار که کلمه ای یاد می گیرید، ستاره ای را روشن کنید."](https://0xlei.tech/words/sfx/voice-galaxy-hello.mp3) |
-| 🎵 **Starry Sky Music** | [یک موسیقی متن اصلی که می تواند یکپارچه حلقه شود](https://0xlei.tech/words/sfx/amb-stars.mp3)، پیش‌فرض هنگام حفظ واژه پخش می‌شود |
-| 🌧 **6 صدای محیط** | [کتابخانه روز بارانی](https://0xlei.tech/words/sfx/amb-rain.mp3)·[ساحل صبح](https://0xlei.tech/words/sfx/amb-sea.mp3)·[صبح در جنگل](https://0xlei.tech/words/sfx/amb-forest.mp3)·[شومینه شبانه](https://0xlei.tech/words/sfx/amb-fire.mp3)·[کلبه سفر](https://0xlei.tech/words/sfx/amb-voyage.mp3)· [کافه آرام](https://0xlei.tech/words/sfx/amb-cafe.mp3) |
+| 🎙 **دوبله صفحه باز** | ["به باز کردن درب آیلتس خوش آمدید"](https://appxa.github.io/word-atlas/sfx/splash-voice.mp3): غبار ستاره‌ها «واژه‌نگار» را می‌سازد و دروازه باز می‌شود |
+| 🌌 **دوبله نقشه ستاره** | ["این نقشه ستاره واژگان شماست. هر بار که کلمه ای یاد می گیرید، ستاره ای را روشن کنید."](https://appxa.github.io/word-atlas/sfx/voice-galaxy-hello.mp3) |
+| 🎵 **Starry Sky Music** | [یک موسیقی متن اصلی که می تواند یکپارچه حلقه شود](https://appxa.github.io/word-atlas/sfx/amb-stars.mp3)، پیش‌فرض هنگام حفظ واژه پخش می‌شود |
+| 🌧 **6 صدای محیط** | [کتابخانه روز بارانی](https://appxa.github.io/word-atlas/sfx/amb-rain.mp3)·[ساحل صبح](https://appxa.github.io/word-atlas/sfx/amb-sea.mp3)·[صبح در جنگل](https://appxa.github.io/word-atlas/sfx/amb-forest.mp3)·[شومینه شبانه](https://appxa.github.io/word-atlas/sfx/amb-fire.mp3)·[کلبه سفر](https://appxa.github.io/word-atlas/sfx/amb-voyage.mp3)· [کافه آرام](https://appxa.github.io/word-atlas/sfx/amb-cafe.mp3) |
 | ✨ ** جلوه های صوتی رابط ** | پاسخ‌های صحیح، پاسخ‌های اشتباه، برگرداندن کارت‌ها، تایپ کردن، رگه‌های برنده، روشن کردن ستاره‌ها... هر عملیات صدای خاص خود را دارد. هنگام خواندن کلمات | صدای پس زمینه به طور خودکار کاهش می یابد
 
 همه مواد در انبار هستند: تصاویر موجود است`public/atlas/img/`، ثبت شده در`public/atlas/audio/`، این دو دسته تحت CC BY 4.0 باز هستند. صداهای رابط و موسیقی متن زیر هستند`public/sfx/`، همراه با برنامه ارائه شده است.
