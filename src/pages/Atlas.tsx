@@ -13,11 +13,11 @@ import { Speak } from "../ui/Speak";
 
 type Status = "all" | "new" | "learning" | "mastered" | "saved";
 const STATUS: [Status, string][] = [
-  ["all", "全部"],
-  ["new", "未学"],
-  ["learning", "学习中"],
-  ["mastered", "已掌握"],
-  ["saved", "收藏"],
+  ["all", "همه"],
+  ["new", "نیاموخته"],
+  ["learning", "در حال یادگیری"],
+  ["mastered", "تسلط‌یافته"],
+  ["saved", "علاقه‌مندی"],
 ];
 
 type View = "grid" | "list" | "galaxy";
@@ -97,14 +97,14 @@ export function AtlasPage({
     <div className={`page atlas ${view === "galaxy" ? "is-galaxy" : ""}`}>
       <header className="atlas-head">
         <div>
-          <p className="eyebrow">图鉴 · {atlas.count.toLocaleString()} 词</p>
+          <p className="eyebrow">واژه‌نامه ·  {atlas.count.toLocaleString()} واژه</p>
           <h1 className="display">
-            每个词，
+            هر واژه، 
             <br className="br-sm" />
-            都有一幅画。
+            یک تصویر دارد.
           </h1>
           <p className="lede">
-            {atlas.examples.toLocaleString()} 条原创例句 · 英美发音 · 按难度和 {atlas.topics.length} 个雅思话题整理
+            {atlas.examples.toLocaleString()} مثال اورجینال · تلفظ بریتیش/امریکن · بر اساس سطح و  {atlas.topics.length} موضوع آیلتس مرتب شده
           </p>
         </div>
         <label className="search">
@@ -112,7 +112,7 @@ export function AtlasPage({
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="搜索单词或中文释义"
+            placeholder="جستجوی واژه یا معنی فارسی"
             spellCheck={false}
             autoComplete="off"
           />
@@ -120,7 +120,7 @@ export function AtlasPage({
             <button
               className="icon-btn"
               onClick={() => setQ("")}
-              aria-label="清空搜索"
+              aria-label="پاک کردن جستجو"
             >
               <X size={16} />
             </button>
@@ -131,12 +131,12 @@ export function AtlasPage({
       <div className="filters">
         {view !== "galaxy" && (
           <>
-            <div className="chips chips-scroll" role="group" aria-label="难度">
+            <div className="chips chips-scroll" role="group" aria-label="سطح">
               <button
                 className={`chip-btn ${!level ? "is-on" : ""}`}
                 onClick={() => setFilter({ level: undefined })}
               >
-                所有难度
+                همه سطوح
               </button>
               {atlas.cefr.map((l) => (
                 <button
@@ -150,12 +150,12 @@ export function AtlasPage({
                 </button>
               ))}
             </div>
-            <div className="chips chips-scroll" role="group" aria-label="主题">
+            <div className="chips chips-scroll" role="group" aria-label="موضوع">
               <button
                 className={`chip-btn ${!topic ? "is-on" : ""}`}
                 onClick={() => setFilter({ topic: undefined })}
               >
-                所有主题
+                همه موضوع‌ها
               </button>
               {atlas.topics.map(([k, name]) => (
                 <button
@@ -173,7 +173,7 @@ export function AtlasPage({
         )}
         <div className="filters-row">
           {view !== "galaxy" && (
-            <div className="segmented" role="group" aria-label="学习状态">
+            <div className="segmented" role="group" aria-label="وضعیت یادگیری">
               {STATUS.map(([k, label]) => (
                 <button
                   key={k}
@@ -188,18 +188,18 @@ export function AtlasPage({
           )}
           <span className="result-count">
             {view === "galaxy"
-              ? "搜索一个词，星图会带你飞过去"
-              : `${list.length.toLocaleString()} 个结果`}
+              ? "واژه‌ای را جستجو کن؛ نقشه ستاره‌ای می‌بردت پیشش"
+              : `${list.length.toLocaleString()} نتیجه`}
           </span>
           <div
             className="segmented segmented-icons"
             role="group"
-            aria-label="视图"
+            aria-label="نما"
           >
             <button
               className={view === "grid" ? "is-on" : ""}
               onClick={() => setView("grid")}
-              aria-label="图片视图"
+              aria-label="نمای تصویری"
               aria-pressed={view === "grid"}
             >
               <Grid3x3 size={17} />
@@ -207,7 +207,7 @@ export function AtlasPage({
             <button
               className={view === "list" ? "is-on" : ""}
               onClick={() => setView("list")}
-              aria-label="列表视图"
+              aria-label="نمای فهرست"
               aria-pressed={view === "list"}
             >
               <List size={17} />
@@ -215,7 +215,7 @@ export function AtlasPage({
             <button
               className={view === "galaxy" ? "is-on" : ""}
               onClick={() => setView("galaxy")}
-              aria-label="星图视图"
+              aria-label="نمای نقشه ستاره‌ای"
               aria-pressed={view === "galaxy"}
             >
               <Sparkles size={17} />
@@ -229,7 +229,7 @@ export function AtlasPage({
       ) : list.length === 0 ? (
         <div className="empty">
           <img src={`${import.meta.env.BASE_URL}brand/empty.webp`} alt="" />
-          <p>这片星域还没有词。换个筛选条件试试。</p>
+          <p>در این بخش ستاره‌ای نیست. فیلتر دیگری امتحان کن.</p>
         </div>
       ) : view === "grid" ? (
         <VirtualGrid items={list} cards={cards} />

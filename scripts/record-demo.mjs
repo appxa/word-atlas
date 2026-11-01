@@ -70,7 +70,7 @@ await glide(0, 40);
 await wait(500);
 
 // One learning step: meet a word, then recall it.
-await page.getByRole("button", { name: /开始今天的旅程|继续旅程/ }).click();
+await page.getByRole("button", {name: /شروع سفر امروز | ادامه سفر/ }).click();
 await wait(2600);
 await page.keyboard.press("Enter");
 await wait(1800);

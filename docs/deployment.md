@@ -1,14 +1,14 @@
-# 部署 / Deployment
+# استقرار / استقرار
 
-`npm run build` 生成纯静态站点 `dist/`，可以放到任何静态托管（Nginx、Cloudflare Pages、Vercel、GitHub Pages）。
+`npm run build`سایت استاتیک خالص ایجاد کنید`dist/`را می توان در هر میزبانی ثابت (Nginx، Cloudflare Pages، Vercel، GitHub Pages) قرار داد.
 
-## 子路径
+## مسیر فرعی
 
 ```bash
 ATLAS_BASE=/words/ npm run build
 ```
 
-## Nginx 示例
+## مثال Nginx
 
 ```nginx
 location ^~ /words/ {
@@ -20,8 +20,8 @@ location ^~ /words/ {
 
 ## GitHub Pages
 
-仓库带有 `.github/workflows/pages.yml`。在仓库 Settings → Pages 选择 “GitHub Actions”，然后手动运行 “Deploy to GitHub Pages”。
+انبار دارد`.github/workflows/pages.yml`. "عملکردهای GitHub" را در تنظیمات مخزن → Pages انتخاب کنید و سپس به صورت دستی "Deploy to GitHub Pages" را اجرا کنید.
 
-## 体积
+## حجم
 
-插画与音频合计约数百 MB。建议在 CDN 后部署，或按需只发布 `thumb/` 和部分音频。
+تصاویر و صدا در مجموع حدود چند صد مگابایت است. توصیه می شود در پشت یک CDN مستقر شوید یا فقط در صورت تقاضا منتشر کنید`thumb/`و مقداری صدا

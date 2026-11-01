@@ -14,7 +14,7 @@ function loadImage(src: string) {
 }
 
 function wrap(ctx: CanvasRenderingContext2D, text: string, maxWidth: number) {
-  const tokens = /[一-鿿]/.test(text) ? Array.from(text) : text.split(/(\s+)/);
+  const tokens = /[ا-ی]/.test(text) ? Array.from(text) : text.split(/(\s+)/);
   const lines: string[] = [];
   let line = "";
   for (const t of tokens) {
@@ -75,7 +75,7 @@ export async function renderWordCard(atlas: Atlas, e: Entry) {
   y += 62;
   ctx.font = `400 34px ${SANS}`;
   ctx.fillStyle = "#6B6F80";
-  ctx.fillText([e.uk && `英 ${e.uk}`, e.us && e.us !== e.uk && `美 ${e.us}`].filter(Boolean).join("    "), pad, y);
+  ctx.fillText([e.uk && `بر  ${e.uk}`, e.us && e.us !== e.uk && `ام  ${e.us}`].filter(Boolean).join("    "), pad, y);
   y += 72;
   ctx.font = `600 40px ${SANS}`;
   ctx.fillStyle = "#1E2640";
@@ -106,10 +106,10 @@ export async function renderWordCard(atlas: Atlas, e: Entry) {
   ctx.fillRect(pad, H - 120, art, 2);
   ctx.fillStyle = "#1E2640";
   ctx.font = `600 34px ${SERIF}`;
-  ctx.fillText("词光 · Word Atlas", pad, H - 62);
+  ctx.fillText("Word Atlas", pad, H - 62);
   ctx.font = `400 26px ${SANS}`;
   ctx.fillStyle = "#7A7C88";
-  const tag = "一词一画，点亮雅思";
+  const tag = "یک واژه، یک تصویر؛ آیلتس را روشن کن";
   ctx.fillText(tag, W - pad - ctx.measureText(tag).width, H - 64);
   return c;
 }
@@ -129,8 +129,8 @@ export async function shareWord(atlas: Atlas, e: Entry) {
     a.download = file.name;
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
-    toast("分享卡片已保存", "ok");
+    toast("کارت اشتراک ذخیره شد", "ok");
   } catch {
-    toast("卡片生成失败，请稍后再试", "warn");
+    toast("ساخت کارت ناموفق بود؛ کمی بعد دوباره امتحان کن", "warn");
   }
 }

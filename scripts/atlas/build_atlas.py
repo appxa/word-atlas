@@ -19,13 +19,7 @@ import subprocess
 
 from common import FORGE, ROOT
 
-TOPICS = [
-    ("education", "教育"), ("work", "职场"), ("technology", "科技"), ("science", "科学"),
-    ("environment", "环境"), ("health", "健康"), ("society", "社会"), ("government", "政法"),
-    ("economy", "经济"), ("media", "媒体"), ("arts", "艺术"), ("travel", "旅行"),
-    ("city", "城市"), ("nature", "自然"), ("daily", "生活"), ("emotion", "情感"),
-    ("thinking", "思维"), ("sport", "运动"), ("history", "历史"),
-]
+TOPICS = [("education", "آموزش"), ("work", "محیط کار"), ("technology", "فناوری"), ("science", "علم"), ("environment", "محیط زیست"), ("health", "سلامت"), ("society", "جامعه"), ("government", "قانون و حکومت"), ("economy", "اقتصاد"), ("media", "رسانه"), ("arts", "هنر"), ("travel", "سفر"), ("city", "شهر"), ("nature", "طبیعت"), ("daily", "زندگی روزمره"), ("emotion", "احساس"), ("thinking", "تفکر"), ("sport", "ورزش"), ("history", "تاریخ")]
 TOPIC_INDEX = {k: i for i, (k, _) in enumerate(TOPICS)}
 CEFR = ["A1", "A2", "B1", "B2", "C1", "C2"]
 PUB = ROOT / "public" / "atlas"

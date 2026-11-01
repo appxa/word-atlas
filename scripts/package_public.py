@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Export the public repository from a strict allowlist and scan every file.
 
-    python3 scripts/package_public.py --out ../开源发布/word-atlas
+python3 scripts/package_public.py --out ../open source release/word-atlas
 
 Never reads .local/, environment files or credential stores, except that it may
 compare file contents against secrets passed via ATLAS_SECRET_FILES so that an

@@ -1,116 +1,116 @@
 <div align="center">
 
-<a href="https://0xlei.tech/words/"><img src="docs/assets/cover-v2.jpg" alt="词光 Word Atlas — 一词一画，点亮雅思" width="100%"></a>
+<a href="https://0xlei.tech/words/"><img src="docs/assets/cover-v2.jpg" alt="واژه‌نگار Word Atlas — یک واژه، یک تصویر" width="100%"></a>
 
-# 词光 · Word Atlas
+# واژه‌نگار · Word Atlas
 
-**把单词变成画面，让复习有迹可循。**
+**واژه‌ها را تصویری کن تا مرورشان قابل پیگیری باشد.**
 
-7,298 个雅思词条 · 原创插画 · 英美发音 · FSRS 间隔复习
+7298 ورودی آیلتس · تصاویر اصلی · تلفظ انگلیسی و آمریکایی · بررسی فاصله FSRS
 
-[**立即体验 ↗**](https://0xlei.tech/words/)　 /　 [48 秒介绍](docs/assets/launch.mp4)　 /　 [下载词库](data/)　 /　 [English](README.en.md)
+[**امتحانش کن ↗**](https://0xlei.tech/words/) / [معرفی ۴۸ ثانیه‌ای](docs/assets/launch.mp4) / [دانلود واژه‌نامه](data/) / [English](README.en.md)
 
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-17283B?style=flat-square)](LICENSE)
 [![Dataset: CC BY 4.0](https://img.shields.io/badge/Dataset-CC_BY_4.0-AD5038?style=flat-square)](CONTENT_LICENSE.md)
 
 <br>
 
-**词光 iOS App 测试版已开放，免费下载：[api.billswise.cn/app](https://api.billswise.cn/app/)**
+**نسخه بتا برنامه Ciguang iOS اکنون برای دانلود رایگان باز است: [api.billswise.cn/app](https://api.billswise.cn/app/)**
 
-[![关注 @yangleiocx3](https://img.shields.io/badge/%E5%85%B3%E6%B3%A8%E6%88%91-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
+[![@yangleiocx3 را دنبال کنید](https://img.shields.io/badge/%E5%85%B3%E6%B3%A8%E6%88%91-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
-### 请我喝杯咖啡
+### برای من یک فنجان قهوه بخر
 
-这个项目开源，又免费，我自己投了很多钱和时间。觉得有用的话，请我喝杯咖啡吧。
+این پروژه متن باز و رایگان است. من خودم پول و زمان زیادی سرمایه گذاری کردم. اگر به نظر شما مفید است، لطفا برای من یک فنجان قهوه بخرید.
 
-<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="240" alt="微信赞助二维码"><br>微信</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="240" alt="支付宝赞助二维码"><br>支付宝</td></tr></table>
+<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="240" alt="کد QR حمایت WeChat"><br>WeChat</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="240" alt="کد QR حمایت Alipay"><br>Alipay</td></tr></table>
 
 </div>
 
 ---
 
-词光是一款以插画和语境为核心的雅思背词应用。看画面理解词义，听发音建立联系，再用主动回忆和间隔复习巩固记忆。无需账号，学习进度保存在自己的设备上。
+Ciguang یک برنامه حفظ لغات آیلتس با تصاویر و زمینه به عنوان هسته آن است. برای درک معنای کلمات به تصاویر نگاه کنید، به تلفظ آن گوش دهید تا ارتباط برقرار کنید، و سپس از یادآوری فعال و بازبینی فاصله ای برای تثبیت حافظه خود استفاده کنید. هیچ حساب کاربری لازم نیست، و پیشرفت یادگیری در دستگاه شما ذخیره می شود.
 
-> **版本说明**：这个仓库提供词光的开源基础版及配套数据集。在线网站独立迭代，功能与仓库可能不同；仓库里的代码和内容分别遵循下方的 MIT / CC BY 4.0 授权。
+> **نکته نسخه**: این انبار نسخه اولیه منبع باز Ciguang و مجموعه داده های پشتیبانی را ارائه می دهد. وب سایت آنلاین به طور مستقل تکرار می شود و عملکردها و انبار ممکن است متفاوت باشد. کد و محتوای موجود در انبار مشمول مجوز MIT / CC BY 4.0 زیر است.
 
-[产品预览](#产品预览) · [学习方式](#学习方式) · [本地运行](#本地运行) · [开放数据](#开放数据) · [参与贡献](#参与贡献)
+[پیش‌نمایش محصول](# پیش‌نمایش محصول) · [روش یادگیری](راه #آموزش) · [اجرای محلی](#اجرای محلی) · [داده‌های باز] (#داده باز) · [شرکت در مشارکت] (# مشارکت در مشارکت)
 
-## 产品预览
+## پیش نمایش محصول
 
-### 一本可以听、可以练的单词图鉴
+### یک کتاب واژگان مصور که می توانید گوش دهید و تمرین کنید
 
-<img src="docs/assets/atlas-desktop.jpg" alt="开源版桌面图鉴：插画词卡和词汇浏览" width="100%">
+<img src="docs/assets/atlas-desktop.jpg" alt="واژه‌نامه نسخه دسکتاپ: کارت‌های تصویری و مرور واژگان" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="docs/assets/today-mobile.jpg" alt="手机端今日学习页" width="100%"></td>
-<td width="50%"><img src="docs/assets/word-mobile.jpg" alt="手机端词卡，展示插画、英美发音与例句" width="100%"></td>
+<td width="50%"><img src="docs/assets/today-mobile.jpg" alt="صفحه امروز در موبایل" width="100%"></td>
+<td width="50%"><img src="docs/assets/word-mobile.jpg" alt="کارت واژه موبایل: تصویرسازی، تلفظ بریتیش/امریکن و مثال‌ها" width="100%"></td>
 </tr>
-<tr><td align="center">每日计划，把注意力放在今天</td><td align="center">插画、词义、发音，在一张词卡里</td></tr>
+<tr><td align="center">برنامه روزانه، تمرکز بر امروز</td><td align="center">تصاویر، معانی کلمات، و تلفظ، در کارت یک کلمه</td></tr>
 </table>
 
-<sub>以上为仓库开源版的实际界面。页首为品牌概念插画。</sub>
+<sub>موارد فوق رابط واقعی نسخه منبع باز انبار است. بالای صفحه یک تصویر مفهومی برند است.</sub>
 
-### 学过的词，汇成自己的星图
+### کلماتی را که آموخته‌اید در نقشه ستاره خود ادغام کنید
 
-<img src="docs/assets/galaxy.jpg" alt="词汇星图界面：按话题组织单词，展示学习进度" width="100%">
+<img src="docs/assets/galaxy.jpg" alt="نقشه ستاره‌ای واژگان: دسته‌بندی بر اساس موضوع و نمایش پیشروی" width="100%">
 
-19 个话题组成词汇星图。拖动旋转、滚动缩放，点击星星打开词卡；学习状态用不同亮度呈现。采用 WebGL2 渲染，不支持的设备提供降级显示。
+19 موضوع نقشه ستاره واژگان را تشکیل می دهند. برای چرخاندن بکشید، برای بزرگنمایی اسکرول کنید و روی ستاره کلیک کنید تا کارت کلمه باز شود. وضعیت یادگیری با روشنایی متفاوت ارائه می شود. با استفاده از WebGL2 ارائه شده است و نمایشگر کاهش یافته را برای دستگاه های پشتیبانی نشده ارائه می دهد.
 
 <details>
-<summary><b>看 48 秒宣传片</b></summary>
+<summary><b>ویدیوی تبلیغاتی 48 ثانیه ای را تماشا کنید</b></summary>
 
-<a href="docs/assets/launch.mp4"><img src="docs/assets/launch-preview.webp" alt="点击观看词光宣传片" width="100%"></a>
+<a href="docs/assets/launch.mp4"><img src="docs/assets/launch-preview.webp" alt="برای دیدن تریلر واژه‌نگار کلیک کن" width="100%"></a>
 
-[播放完整视频（含声音）](docs/assets/launch.mp4)
+[پخش ویدیوی کامل (با صدا)] (docs/assets/launch.mp4)
 
 </details>
 
-## 学习方式
+## روش های یادگیری
 
-| 环节 | 你会做什么 |
+| جلسه | چه خواهید کرد |
 | :--- | :--- |
-| **看见** | 每个词配一幅插画、中英释义、两条原创例句，以及搭配、词族和用法提示。 |
-| **听见** | 切换英音、美音，听日常例句朗读；部分词条另含第二条例句录音。 |
-| **想起** | 看义选词、看图补句、听音辨词、拼写，逐步练习主动回忆。 |
-| **复习** | FSRS 根据学习记录安排复习，目标记忆率可调。只有首次作答计入正确率。 |
-| **积累** | 星图展示学习进度；打字练习独立统计；支持导出和恢复本地进度。 |
+| **ببینید** | هر کلمه با یک تصویر، تعاریف چینی و انگلیسی، دو مثال اصلی، و همچنین ترکیب، خانواده کلمات و نکات استفاده همراه است. |
+| ** بشنو ** | بین لهجه‌های انگلیسی و آمریکایی جابه‌جا شوید و به جملات مثال روزانه با صدای بلند گوش دهید. برخی از ورودی ها همچنین شامل ضبط جمله مثال دوم هستند. |
+| **یادتون باشه** | کلمات را با نگاه کردن به معانی آنها انتخاب کنید، جملات را با نگاه کردن به تصاویر کامل کنید، کلمات را با گوش دادن به صداها، املای آنها شناسایی کنید و به تدریج یادآوری فعال را تمرین کنید. |
+| **بررسی** | FSRS بررسی را بر اساس سوابق یادگیری ترتیب می دهد و میزان حافظه هدف قابل تنظیم است. فقط اولین پاسخ در نرخ صحیح به حساب می آید. |
+| **انباشت ** | نمودار ستاره پیشرفت یادگیری را نشان می دهد. آمار مستقل تمرین تایپ؛ از صادرات و بازیابی پیشرفت محلی پشتیبانی می کند. |
 
-**本地优先。** 无需注册；看过的词条与媒体可缓存供离线使用。换设备前，请先导出进度备份。
+**اولویت محلی ** بدون نیاز به ثبت نام؛ ورودی ها و رسانه های مشاهده شده را می توان برای استفاده آفلاین ذخیره کرد. قبل از تغییر دستگاه، لطفاً نسخه پشتیبان پیشرفت را صادر کنید.
 
 <details>
-<summary><b>听发音、例句与环境声样本</b></summary>
+<summary><b>به تلفظ، مثال های جمله و نمونه های صدای محیط گوش دهید</b></summary>
 
 
 
-拿 *abandon* 举例，点开就能听（在线播放）：
-
-| | |
-|---|---|
-| 🇬🇧 英音 | [abandon /əˈbændən/](https://0xlei.tech/words/atlas/audio/uk/abandon.mp3) |
-| 🇺🇸 美音 | [abandon /əˈbændən/](https://0xlei.tech/words/atlas/audio/us/abandon.mp3) |
-| 📖 例句朗读 | [We had to abandon our car in the snow.](https://0xlei.tech/words/atlas/audio/ex/abandon.mp3) |
-
-全部 7,298 个词都有英音、美音和例句朗读，还有 1,011 个重点词的第二条例句也配了朗读。
-
-### 环境声与交互声音
+*رها کردن* را به عنوان مثال در نظر بگیرید، برای گوش دادن روی آن کلیک کنید (پخش آنلاین):
 
 | | |
 |---|---|
-| 🎙 **开屏配音** | [「欢迎打开雅思大门」](https://0xlei.tech/words/sfx/splash-voice.mp3)：星尘汇聚成“词光”，大门打开 |
-| 🌌 **星图配音** | [「这是你的词汇星图。每学会一个词，就点亮一颗星。」](https://0xlei.tech/words/sfx/voice-galaxy-hello.mp3) |
-| 🎵 **星空音乐** | [一段可无缝循环的原创配乐](https://0xlei.tech/words/sfx/amb-stars.mp3)，默认陪你背词 |
-| 🌧 **6 段环境声** | [雨天图书馆](https://0xlei.tech/words/sfx/amb-rain.mp3) · [清晨海岸](https://0xlei.tech/words/sfx/amb-sea.mp3) · [林间早晨](https://0xlei.tech/words/sfx/amb-forest.mp3) · [夜晚壁炉](https://0xlei.tech/words/sfx/amb-fire.mp3) · [远航船舱](https://0xlei.tech/words/sfx/amb-voyage.mp3) · [安静咖啡馆](https://0xlei.tech/words/sfx/amb-cafe.mp3) |
-| ✨ **界面音效** | 答对、答错、翻卡、打字、连胜、点亮星星……每个操作都有自己的声音；读单词时背景音会自动压低 |
+| 🇬🇧 تلفظ انگلیسی | [ترک کردن /əˈbændən/](https://0xlei.tech/words/atlas/audio/uk/abandon.mp3) |
+| 🇺🇸 تلفظ آمریکایی | [ترک کردن /əˈbændən/](https://0xlei.tech/words/atlas/audio/us/abandon.mp3) |
+| 📖 جمله خوانی مثال | [ما مجبور شدیم ماشین خود را در برف رها کنیم.](https://0xlei.tech/words/atlas/audio/ex/abandon.mp3) |
 
-全部素材都在仓库里：插画在 `public/atlas/img/`，录音在 `public/atlas/audio/`，这两类按 CC BY 4.0 开放；界面声音和配乐在 `public/sfx/`，随应用一起提供。
+همه 7298 کلمه دارای تلفظ انگلیسی، تلفظ آمریکایی و جملات مثال با صدای بلند خوانده می شوند و جمله دوم 1011 کلمه کلیدی نیز با صدای بلند خوانده می شود.
+
+### صداهای محیطی و صداهای تعاملی
+
+| | |
+|---|---|
+| 🎙 **دوبله صفحه باز** | ["به باز کردن درب آیلتس خوش آمدید"](https://0xlei.tech/words/sfx/splash-voice.mp3): غبار ستاره‌ها «واژه‌نگار» را می‌سازد و دروازه باز می‌شود |
+| 🌌 **دوبله نقشه ستاره** | ["این نقشه ستاره واژگان شماست. هر بار که کلمه ای یاد می گیرید، ستاره ای را روشن کنید."](https://0xlei.tech/words/sfx/voice-galaxy-hello.mp3) |
+| 🎵 **Starry Sky Music** | [یک موسیقی متن اصلی که می تواند یکپارچه حلقه شود](https://0xlei.tech/words/sfx/amb-stars.mp3)، پیش‌فرض هنگام حفظ واژه پخش می‌شود |
+| 🌧 **6 صدای محیط** | [کتابخانه روز بارانی](https://0xlei.tech/words/sfx/amb-rain.mp3)·[ساحل صبح](https://0xlei.tech/words/sfx/amb-sea.mp3)·[صبح در جنگل](https://0xlei.tech/words/sfx/amb-forest.mp3)·[شومینه شبانه](https://0xlei.tech/words/sfx/amb-fire.mp3)·[کلبه سفر](https://0xlei.tech/words/sfx/amb-voyage.mp3)· [کافه آرام](https://0xlei.tech/words/sfx/amb-cafe.mp3) |
+| ✨ ** جلوه های صوتی رابط ** | پاسخ‌های صحیح، پاسخ‌های اشتباه، برگرداندن کارت‌ها، تایپ کردن، رگه‌های برنده، روشن کردن ستاره‌ها... هر عملیات صدای خاص خود را دارد. هنگام خواندن کلمات | صدای پس زمینه به طور خودکار کاهش می یابد
+
+همه مواد در انبار هستند: تصاویر موجود است`public/atlas/img/`، ثبت شده در`public/atlas/audio/`، این دو دسته تحت CC BY 4.0 باز هستند. صداهای رابط و موسیقی متن زیر هستند`public/sfx/`، همراه با برنامه ارائه شده است.
 
 
 </details>
 
-## 本地运行
+## به صورت محلی اجرا کنید
 
-需要 **Node.js 20+** 和 npm。仓库含完整图片与录音，首次下载可能较久。
+به **Node.js 20+** و npm نیاز دارد. انبار شامل تصاویر و صداهای ضبط شده کامل است و ممکن است دانلود برای اولین بار زمان زیادی ببرد.
 
 ```bash
 git clone --depth 1 https://github.com/designfuchen/word-atlas.git
@@ -119,28 +119,28 @@ npm ci
 npm run dev
 ```
 
-打开 **http://localhost:5188**。
+باز کردن **http://localhost:5188**。
 
 ```bash
-npm test             # 单元测试
-npm run check:atlas  # 词库结构与媒体校验
-npm run build        # 构建到 dist/
+تست npm # تست واحد
+npm run check:atlas # ساختار واژگان و تأیید رسانه
+npm اجرای ساخت # Build to dist/
 ```
 
-子路径部署：`ATLAS_BASE=/words/ npm run build`。完整说明见 [部署文档](docs/deployment.md)。
+استقرار مسیر فرعی:`ATLAS_BASE=/words/ npm run build`. برای دستورالعمل‌های کامل به [اسناد استقرار] (docs/deployment.md) مراجعه کنید.
 
-**技术栈**：React 19 · TypeScript · Vite · ts-fsrs · WebGL2
+**پشته فناوری**: React 19 · TypeScript · Vite · ts-fsrs · WebGL2
 
-## 开放数据
+## داده ها را باز کنید
 
-不仅可以直接使用应用，也可以把词库用于自己的学习工具、Anki 牌组或研究项目。
+نه تنها می توانید مستقیماً از برنامه استفاده کنید، بلکه می توانید از کتابخانه واژگان در ابزارهای مطالعه، عرشه های Anki یا پروژه های تحقیقاتی خود نیز استفاده کنید.
 
-| 资源 | 开源版内容 | 入口 |
+| منابع | محتوای نسخه متن باز | ورودی |
 | :--- | :--- | :--- |
-| 词条 | **7,298** 条，CEFR A1–C2、19 个话题 | [JSON](data/word-atlas.json) · [CSV](data/word-atlas.csv) |
-| 例句 | **14,596** 条，日常与雅思语境，附中文翻译 | [字段说明](docs/dataset.md) |
-| 插画 | **7,298** 幅，512 px WebP，另有缩略图 | [图片目录](public/atlas/img/) |
-| 录音 | **22,905** 段，英音、美音与例句朗读 | [音频目录](public/atlas/audio/) |
+| ورودی ها | **7298** ورودی، CEFR A1–C2، 19 موضوع | [JSON](data/word-atlas.json) · [CSV](data/word-atlas.csv) |
+| جملات مثال | **14596** مطلب روزانه و زمینه آیلتس با ترجمه چینی | [توضیحات فیلد](docs/dataset.md) |
+| تصاویر | **7298** تصاویر، 512 پیکسل WebP، به علاوه تصاویر کوچک | [Image Director](public/atlas/img/) |
+| ضبط | **22905** پاراگراف، به زبان انگلیسی، آمریکایی و جملات مثال خوانده شده | [دایرکتوری صوتی](public/atlas/audio/) |
 
 ```python
 import json
@@ -151,7 +151,7 @@ b2_environment = [w for w in words if w["cefr"] == "B2" and w["topic"] == "envir
 ```
 
 <details>
-<summary><b>查看一条词条的数据结构</b></summary>
+<summary><b>مشاهده ساختار داده یک ورودی</b></summary>
 
 ```json
 {
@@ -159,14 +159,14 @@ b2_environment = [w for w in words if w["cefr"] == "B2" and w["topic"] == "envir
   "w": "principle",
   "uk": "/ˈprɪnsəpəl/",
   "us": "/ˈprɪnsəpəl/",
-  "senses": [{ "pos": "n.", "zh": "原则；行为准则", "en": "A belief or rule that guides decisions and behaviour." }],
+"senses": [{ "pos": "n."، "zh": "اصول؛ منشور رفتار"، "en": "عقاید یا قاعده ای که تصمیمات و رفتار را هدایت می کند." }]،
   "ex": [
-    { "en": "I refused the extra money as a matter of principle.", "zh": "出于原则，我拒绝了那笔额外的钱。" },
+{ "fa": "من از پول اضافی به عنوان یک موضوع رد کردم." }،
     { "en": "The principle of equal opportunity should guide policies designed to improve access to higher education.", "zh": "…" }
   ],
-  "col": ["in principle｜原则上", "basic principle｜基本原则"],
+"col": ["در اصل ｜در اصل"، "اصل پایه｜اصل پایه"]،
   "fam": ["principled (adj.)"],
-  "tip": "principle 是原则；principal 是校长、主要的。",
+"نکته": "اصل اصل است؛ اصل اصل است، اصل است."
   "cefr": "B2",
   "topic": "thinking"
 }
@@ -174,30 +174,30 @@ b2_environment = [w for w in words if w["cefr"] == "B2" and w["topic"] == "envir
 
 </details>
 
-### 内容来源与局限
+### منابع و محدودیت های محتوا
 
-释义、例句、插画和录音为本项目生成：文字与插画使用生成式 AI，语音使用 ElevenLabs。内容经过自动结构与一致性校验，**尚未逐条人工审校**，可能出现释义、例句、插画或发音错误。它不是官方雅思词表，也不承诺提分。
+تعاریف، مثال‌ها، تصاویر و ضبط‌های صوتی برای این پروژه تولید شد: متن و تصاویر با استفاده از هوش مصنوعی تولیدی، و گفتار با استفاده از ElevenLabs. محتوا به طور خودکار از نظر ساختار و سازگاری بررسی شده است. **به صورت دستی مورد به مورد بررسی نشده است**. ممکن است در تفسیر، جملات مثال، تصاویر یا تلفظ اشتباهاتی وجود داشته باشد. این یک لیست رسمی واژگان آیلتس نیست و قول بهبود نمره شما را نمی دهد.
 
-[内容生成流程](docs/pipeline.md) · [记忆模型](docs/learning-model.md) · [生成脚本](scripts/atlas/)
+[فرآیند تولید محتوا] (docs/pipeline.md) · [مدل حافظه] (docs/learning-model.md) · [اسکریپت نسل] (scripts/atlas/)
 
-## 参与贡献
+## مشارکت و مشارکت داشته باشید
 
-发现问题时，请附上**词条 ID、复现步骤和预期结果**。内容纠错如有词典或其他可靠依据，也请一并提供。
+وقتی مشکلی پیدا کردید، لطفاً **شناسه ورودی، مراحل بازتولید و نتایج مورد انتظار** را پیوست کنید. اگر فرهنگ لغت یا مبنای قابل اعتماد دیگری برای تصحیح محتوا دارید، لطفاً آن را نیز ارائه دهید.
 
-- [报告问题](https://github.com/designfuchen/word-atlas/issues/new/choose)：词条纠错、界面问题或使用建议。
-- [贡献指南](CONTRIBUTING.md)：数据同步、代码规范和提交前检查。
-- [安全政策](SECURITY.md)：安全问题的反馈方式。
+- [گزارش یک مشکل](https://github.com/designfuchen/word-atlas/issues/new/choose): اصلاح مدخل‌ها، مشکلات رابط یا پیشنهادهای استفاده.
+- [راهنمای مشارکت] (CONTRIBUTING.md): همگام سازی داده ها، مشخصات کد و بررسی های پیش از ارسال.
+- [Security Policy] (SECURITY.md): روش بازخورد برای مسائل امنیتی.
 
-## 授权
+## مجوز
 
-| 范围 | 许可 |
+| محدوده | مجوز |
 | :--- | :--- |
-| 应用代码 | [MIT](LICENSE) |
-| 词库文本、插画与词条录音 | [CC BY 4.0](CONTENT_LICENSE.md)，署名 Word Atlas contributors（词光） |
-| 第三方依赖与字体 | 遵循各自许可，详见相应文件 |
+| کد برنامه | [MIT](LICENSE) |
+| متن واژگان، تصاویر و ضبط مدخل | [CC BY 4.0](CONTENT_LICENSE.md)، امضا شده توسط مشارکت کنندگان Word Atlas (Ciguang) |
+| وابستگی ها و فونت های شخص ثالث | مجوزهای مربوطه را دنبال کنید، برای جزئیات بیشتر به اسناد مربوطه مراجعه کنید |
 
 ---
 
-由 [@designfuchen](https://github.com/designfuchen) 制作。产品进展与制作过程见 [X · @yangleiocx3](https://x.com/yangleiocx3)。
+توسط [@designfuchen](https://github.com/designfuchen)بسازید. برای پیشرفت محصول و فرآیند تولید، لطفاً [X · @yanngleiocx3](https://x.com/yangleiocx3)。
 
-如果词光对你有用，欢迎 Star，或把它分享给正在学英语的朋友。
+اگر سیگوانگ برای شما مفید است، به ستاره خوش آمدید یا آن را با دوستانی که در حال یادگیری زبان انگلیسی هستند به اشتراک بگذارید.

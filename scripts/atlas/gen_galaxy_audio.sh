@@ -19,6 +19,6 @@ done
 say() { curl -sf -o "$1.mp3" "$API/text-to-speech/DowyQ68vDpgFYdWVGjc3?output_format=mp3_44100_128" -H "xi-api-key: $K" -H "Content-Type: application/json" \
   -d "{\"text\":\"[softly] $2\",\"model_id\":\"eleven_v3\",\"language_code\":\"zh\",\"voice_settings\":{\"stability\":0.5,\"similarity_boost\":0.8,\"style\":0.3}}"; }
 for k in 0 1; do
-  say "galaxy-hello-$k" "这是你的词汇星图。每学会一个词，就点亮一颗星。"
-  say "galaxy-lit-$k" "今天的星星，已经点亮。"
+بگویید "galaxy-hello-$k" "این نقشه ستاره واژگان شماست. برای هر کلمه ای که یاد می گیرید، یک ستاره روشن کنید."
+بگویید "galaxy-lit-$k" "ستارگان از قبل روشن شده اند."
 done

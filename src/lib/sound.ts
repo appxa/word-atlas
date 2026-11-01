@@ -6,13 +6,13 @@ const BASE = `${import.meta.env.BASE_URL}sfx/`;
 
 export type Cue = "correct" | "wrong" | "flip" | "page" | "complete" | "streak" | "start" | "tap" | "key" | "twinkle" | "fly" | "ignite";
 export const AMBIENCE = [
-  { id: "stars", label: "星空音乐" },
-  { id: "rain", label: "雨天图书馆" },
-  { id: "sea", label: "清晨海岸" },
-  { id: "forest", label: "林间早晨" },
-  { id: "fire", label: "夜晚壁炉" },
-  { id: "voyage", label: "远航船舱" },
-  { id: "cafe", label: "安静咖啡馆" },
+  { id: "stars", label: "موسیقی آسمان شب"  },
+  { id: "rain", label: "کتابخانه روز بارانی"  },
+  { id: "sea", label: "ساحل سپیده‌دم"  },
+  { id: "forest", label: "صبح در جنگل"  },
+  { id: "fire", label: "شومینه شبانه"  },
+  { id: "voyage", label: "کابین کشتی"  },
+  { id: "cafe", label: "کافه آرام"  },
 ] as const;
 export type AmbienceId = (typeof AMBIENCE)[number]["id"];
 

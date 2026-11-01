@@ -293,7 +293,7 @@ export function Galaxy({
         }}
         onWheel={onWheel}
         role="img"
-        aria-label={`词汇星图：${layout.n} 颗星，已点亮 ${lit} 颗。可拖动旋转、滚动缩放，点击星星打开词条。`}
+        aria-label={`نقشه ستاره‌ای واژگان: ${layout.n} ستاره؛ روشن‌شده:  ${lit} ستاره. می‌توانی بکشی تا بچرخد، اسکرول کنی تا بزرگ شود، و روی ستاره بزنی تا واژه باز شود.`}
         tabIndex={0}
         onKeyDown={(e) => {
           const eng = engine.current;
@@ -328,28 +328,28 @@ export function Galaxy({
       )}
       <div className="galaxy-hud">
         <p>
-          <b>{lit.toLocaleString()}</b> / {layout.n.toLocaleString()} 颗星已点亮
+          <b>{lit.toLocaleString()}</b> / {layout.n.toLocaleString()} ستاره روشن شد
         </p>
         <ul className="galaxy-legend" aria-hidden="true">
           <li>
             <i className="lg-dust" />
-            未学
+            نیاموخته
           </li>
           <li>
             <i className="lg-learning" />
-            学习中
+            در حال یادگیری
           </li>
           <li>
             <i className="lg-mastered" />
-            已掌握
+            تسلط‌یافته
           </li>
         </ul>
       </div>
       <div className="galaxy-controls">
-        <button className="icon-btn" onClick={() => engine.current && (engine.current.cam.dist = clampDist(engine.current.cam.dist * 0.8))} aria-label="放大">
+        <button className="icon-btn" onClick={() => engine.current && (engine.current.cam.dist = clampDist(engine.current.cam.dist * 0.8))} aria-label="بزرگ‌نمایی">
           <Plus size={18} />
         </button>
-        <button className="icon-btn" onClick={() => engine.current && (engine.current.cam.dist = clampDist(engine.current.cam.dist * 1.25))} aria-label="缩小">
+        <button className="icon-btn" onClick={() => engine.current && (engine.current.cam.dist = clampDist(engine.current.cam.dist * 1.25))} aria-label="کوچک‌نمایی">
           <Minus size={18} />
         </button>
         <button
@@ -359,7 +359,7 @@ export function Galaxy({
             engine.current?.replayIntro();
             if (store.get().settings.sfx) void cue("fly");
           }}
-          aria-label="回到全景"
+          aria-label="بازگشت به نمای کلی"
         >
           <RotateCcw size={17} />
         </button>
@@ -374,15 +374,15 @@ export function Galaxy({
               if (store.get().settings.sfx) void cue("fly");
             }
           }}
-          aria-label="飞到一颗已点亮的星"
+          aria-label="پرتاب به یک ستاره روشن"
         >
           <Crosshair size={17} />
         </button>
-        <button className="icon-btn" onClick={() => canvas.current && shareGalaxy(canvas.current, lit, layout.n)} aria-label="分享我的星图">
+        <button className="icon-btn" onClick={() => canvas.current && shareGalaxy(canvas.current, lit, layout.n)} aria-label="اشتراک نقشه ستاره‌ای من">
           <Share2 size={17} />
         </button>
       </div>
-      <p className="galaxy-hint">拖动旋转 · 滚动缩放 · 点击星星打开词条</p>
+      <p className="galaxy-hint">بکش تا بچرخد · اسکرول کن تا بزرگ شود · روی ستاره بزن تا واژه باز شود</p>
     </div>
   );
 }

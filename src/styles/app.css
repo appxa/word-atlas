@@ -133,6 +133,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "kern", "palt";
 }
+
+/* Persian (RTL) support */
+body {
+  font-family: "Vazirmatn", "Segoe UI", Tahoma, var(--sans);
+}
+.ew, .word-en, [lang="en"], .en {
+  font-family: "Charis SIL", "Doulos SIL", "Segoe UI", "Noto Sans", var(--sans);
+}
 body::before {
   /* Risograph grain shared with the illustrations. */
   content: "";

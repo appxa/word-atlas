@@ -1,26 +1,26 @@
-# 内容授权 / Content license
+# مجوز محتوا / مجوز محتوا
 
-## 代码 / Code
+## کد / کد
 
-源代码与界面设计采用 [MIT License](LICENSE)。依赖包保留各自授权；Fraunces 字体为 SIL Open Font License 1.1。
+کد منبع و طراحی رابط از [مجوز MIT] (LICENSE) استفاده می کنند. بسته های وابسته مجوزهای مربوطه خود را حفظ می کنند. فونت Fraunces SIL Open Font License 1.1 است.
 
 Source code and UI design are under the [MIT License](LICENSE). Dependencies keep their own licenses; the Fraunces typeface is under the SIL Open Font License 1.1.
 
-## 词库内容、插画与录音 / Dataset, illustrations and recordings
+## مجموعه داده ها، تصاویر و ضبط ها / مجموعه داده ها، تصاویر و ضبط ها
 
-以下内容以 **[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)** 提供，在项目维护者能够授予的权利范围内：
+محتوای زیر تحت مجوز **[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)**تا جایی که نگهبانان پروژه قادر به اعطای موارد زیر باشند، ارائه دهید:
 
-- `data/` 下的词库文件，以及 `public/atlas/index.json`、`public/atlas/entries/` 中的释义、英文释义、例句、译文、搭配、词族、近反义词、提示、分级与分类；
-- `public/atlas/img/`、`public/atlas/thumb/`、`public/brand/` 中的插画；
-- `public/atlas/audio/` 中的发音与例句录音。
+- `data/`فایل اصطلاحنامه تحت، و`public/atlas/index.json`、`public/atlas/entries/`تعاریف، تعاریف انگلیسی، مثال‌ها، ترجمه‌ها، ترکیب‌بندی‌ها، خانواده‌های کلمات، متضادها، نکات، طبقه‌بندی‌ها و طبقه‌بندی‌ها.
+- `public/atlas/img/`、`public/atlas/thumb/`、`public/brand/`تصاویر در;
+- `public/atlas/audio/`ضبط تلفظ و جملات مثال در .
 
 The material above is offered under CC BY 4.0, to the extent of the rights the maintainers can grant.
 
-**署名 / Attribution:** `Word Atlas contributors — CC BY 4.0`，并附授权链接，说明是否做过修改。
+**امضا / منبع:**`Word Atlas contributors — CC BY 4.0`و پیوند مجوز را برای نشان دادن اینکه آیا تغییراتی انجام شده است را پیوست کنید.
 
-### 说明 / Notes
+### توضیحات / یادداشت ها
 
-- 单个英文单词与通用词表本身不主张专有权。This project claims no exclusive rights over English words or the bare headword list.
-- 内容由 AI 模型按项目规范生成（文本：大语言模型；插画：图像模型；录音：ElevenLabs 合成语音），经过自动校验，未逐条人工审校，按现状提供，不作准确性担保。Content was generated with AI models under the project's specifications, checked automatically, not proofread entry by entry, and is provided as-is without warranty.
-- 录音授权只涉及这些完成的音频文件，不包含底层声音模型、声音身份或任何人的肖像、人格权，也不表示声音提供方为本项目背书。英音声音为 ElevenLabs “Alice”，美音为 “Sarah”。The recording license covers the finished audio files only, not the underlying voice models or voice identities, and implies no endorsement. Voices: ElevenLabs "Alice" (UK) and "Sarah" (US).
-- 不是官方雅思（IELTS）词表，与雅思考试主办方无关。Not an official IELTS list and not affiliated with the IELTS partners.
+- کلمات انگلیسی فردی و واژگان عمومی به خودی خود ادعای حقوق انحصاری ندارند. این پروژه ادعای حقوق انحصاری بر روی کلمات انگلیسی یا لیست سر واژه های خالی ندارد.
+- محتوا توسط مدل های هوش مصنوعی مطابق با مشخصات پروژه تولید می شود (متن: مدل زبان بزرگ؛ تصویر: مدل تصویر؛ ضبط: گفتار سنتز شده ElevenLabs). به طور خودکار تأیید شده است و مورد به مورد به صورت دستی بررسی نشده است. همانطور که هست ارائه می شود و دقت آن تضمین نمی شود. محتوا با مدل‌های هوش مصنوعی تحت مشخصات پروژه تولید شده است، به طور خودکار بررسی می‌شود، ورودی با ورودی تصحیح نمی‌شود، و همانطور که هست بدون ضمانت ارائه می‌شود.
+- مجوز ضبط فقط شامل این فایل‌های صوتی تکمیل‌شده می‌شود و شامل مدل صدای اصلی، هویت صدا، یا حقوق پرتره یا شخصیت هر کسی نمی‌شود، و همچنین به این معنا نیست که ارائه‌دهنده صدا این پروژه را تأیید می‌کند. تلفظ انگلیسی ElevenLabs "Alice" و تلفظ آمریکایی "Sarah" است. مجوز ضبط فقط فایل‌های صوتی تمام‌شده را پوشش می‌دهد، نه مدل‌های صوتی زیربنایی یا هویت‌های صوتی، و مستلزم هیچ تأییدی نیست. صداها: ElevenLabs "Alice" (بریتانیا) و "Sarah" (ایالات متحده).
+- این یک لیست رسمی واژگان آیلتس نیست و ربطی به سازمان دهنده آزمون آیلتس ندارد. لیست رسمی آیلتس نیست و به شرکای آیلتس وابسته نیست.

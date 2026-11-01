@@ -1,6 +1,6 @@
-# Word Atlas 词库
+# واژه نامه اطلس ورد
 
-- `word-atlas.json`：完整结构化数据
-- `word-atlas.csv`：表格版
+- `word-atlas.json`: داده های ساخت یافته کامل
+- `word-atlas.csv`: نسخه جدول
 
-字段说明：[../docs/dataset.md](../docs/dataset.md)。授权：CC BY 4.0，署名 “Word Atlas contributors”。
+شرح فیلد: [../docs/dataset.md](../docs/dataset.md). مجوز: CC BY 4.0، منتسب به "مشارکت کنندگان Word Atlas".
