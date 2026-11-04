@@ -48,13 +48,13 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
   };
   return (
     <div className="palette-root" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <div className="palette" role="dialog" aria-modal="true" aria-label="جستجوی واژه">
+      <div className="palette" role="dialog" aria-modal="true" aria-label="جست‌وجوی واژه">
         <label className="palette-input">
           <Search size={20} />
           <input
             ref={input}
             value={q}
-            placeholder="جستجوی انگلیسی یا فارسی، مثل serendipity / کتابخانه"
+            placeholder="جست‌وجوی انگلیسی یا فارسی، مثل serendipity / کتابخانه"
             onChange={(e) => setQ(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Escape") onClose();
@@ -94,10 +94,10 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
               {i === sel && <CornerDownLeft size={15} className="palette-enter" />}
             </li>
           ))}
-          {q && !results.length && <li className="palette-empty">پیدا نشد «{q}」</li>}
+          {q && !results.length && <li className="palette-empty">نتیجه‌ای برای «{q}» پیدا نشد</li>}
           {!q && (
             <li className="palette-hint">
-              {atlas.count.toLocaleString()} واژه · جستجو با پیشوند انگلیسی و معنی فارسی ·  <kbd>↑</kbd>
+              {atlas.count.toLocaleString()} واژه · جست‌وجو با پیشوند انگلیسی و معنی فارسی ·  <kbd>↑</kbd>
               <kbd>↓</kbd> انتخاب  <kbd>↵</kbd> باز کن
             </li>
           )}

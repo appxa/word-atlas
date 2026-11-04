@@ -3,9 +3,10 @@ import { sessionStats } from "../store/session";
 import { Rating } from "../store/srs";
 import type { ActiveSession } from "../store/store";
 import { toast } from "./Toast";
+import { formatPersianDate } from "../lib/date";
 
 const SERIF = '"Fraunces Variable", "Songti SC", "Noto Serif SC", Georgia, serif';
-const SANS = '-apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+const SANS = '"Vazirmatn Variable", Tahoma, sans-serif';
 
 const load = (src: string) =>
   new Promise<HTMLImageElement | null>((r) => {
@@ -24,7 +25,9 @@ export async function shareSession(atlas: Atlas, s: ActiveSession) {
     c.width = W;
     c.height = H;
     const ctx = c.getContext("2d")!;
-    await document.fonts.load(`600 96px ${SERIF}`).catch(() => null);
+    ctx.direction = "ltr";
+    ctx.textAlign = "left";
+    await Promise.all([document.fonts.load(`600 96px ${SERIF}`), document.fonts.load(`600 64px ${SANS}`, "فارسی")]).catch(() => null);
     ctx.fillStyle = "#F3ECDF";
     ctx.fillRect(0, 0, W, H);
     const ids = [...new Set(s.steps.map((x) => x.id))].slice(0, 9);
@@ -57,16 +60,20 @@ export async function shareSession(atlas: Atlas, s: ActiveSession) {
     const st = sessionStats(s);
     const top = pad + 3 * cell + 2 * gapPx + 96;
     const d = new Date();
+    ctx.save();
+    ctx.direction = "rtl";
+    ctx.textAlign = "right";
     ctx.fillStyle = "#8A8C96";
     ctx.font = `500 28px ${SANS}`;
-    ctx.fillText(`${d.getMonth() + 1}ماه${d.getDate()}روز · امروز روشن شد  ${ids.length} ستاره`, pad, top - 24);
+    ctx.fillText(`${formatPersianDate(d)} · امروز ${ids.length} ستاره روشن کردی`, W - pad, top - 24);
     ctx.fillStyle = "#1E2640";
-    ctx.font = `600 64px ${SERIF}`;
-    ctx.fillText(`یادگرفته  ${ids.length} واژه؛ درست در اولین تلاش:  ${st.accuracy}%`, pad, top + 52, W - pad * 2);
+    ctx.font = `600 54px ${SANS}`;
+    ctx.fillText(`${ids.length} واژه آموختی · دقت: ${st.accuracy.toLocaleString("fa-IR")}٪`, W - pad, top + 52, W - pad * 2);
     const wrong = Object.values(s.graded).filter((g) => g === Rating.Again).length;
     ctx.font = `400 30px ${SANS}`;
     ctx.fillStyle = "#5A6075";
-    ctx.fillText(`واژه جدید  ${s.newIds.length} · مرور  ${s.reviewIds.length} · دوباره باید ببینیم:  ${wrong}`, pad, top + 112);
+    ctx.fillText(`واژهٔ جدید ${s.newIds.length} · مرور ${s.reviewIds.length} · پاسخ نادرست ${wrong}`, W - pad, top + 112);
+    ctx.restore();
     ctx.fillStyle = "rgba(30,38,64,.14)";
     ctx.fillRect(pad, H - 116, W - pad * 2, 2);
     ctx.fillStyle = "#1E2640";
@@ -75,7 +82,9 @@ export async function shareSession(atlas: Atlas, s: ActiveSession) {
     ctx.font = `400 26px ${SANS}`;
     ctx.fillStyle = "#8A8C96";
     const tag = "یک واژه، یک تصویر؛ آیلتس را روشن کن";
-    ctx.fillText(tag, W - pad - ctx.measureText(tag).width, H - 60);
+    ctx.direction = "rtl";
+    ctx.textAlign = "right";
+    ctx.fillText(tag, W - pad, H - 60);
     const blob = await new Promise<Blob | null>((r) => c.toBlob(r, "image/png"));
     if (!blob) throw new Error();
     const file = new File([blob], `word-atlas-${d.toISOString().slice(0, 10)}.png`, { type: "image/png" });

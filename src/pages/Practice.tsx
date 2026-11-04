@@ -16,10 +16,10 @@ type Source = "recent" | "mistakes" | "saved" | "path";
 const MODES: [Mode, string, string, typeof Type][] = [
   ["word", "واژه", "با دیدن تصویر، واژه را بنویس", Type],
   ["sentence", "مثال", "رونویسی کن تا دستت عادت کند", Keyboard],
-  ["dictation", "دیکتِه", "فقط صدا را بشنو و کل جمله را بنویس", Headphones],
+  ["dictation", "دیکته", "فقط صدا را بشنو و کل جمله را بنویس", Headphones],
 ];
 const SOURCES: [Source, string][] = [
-  ["recent", "اخیراً یادگرفته"],
+  ["recent", "تازه‌آموخته‌ها"],
   ["mistakes", "دفتر واژه‌های اشتباه"],
   ["saved", "علاقه‌مندی"],
   ["path", "مسیر یادگیری"],
@@ -56,11 +56,11 @@ export function Practice() {
       <header className="page-head">
         <p className="eyebrow">تمرین · استودیو تایپ</p>
         <h1 className="display">بگذار دستت هم آن‌ها را به خاطر بسپارد.</h1>
-        <p className="lede">تایپ فقط املا و دست را تمرین می‌دهد؛ پیشروی حافظه را تغییر نمی‌دهد.</p>
+        <p className="lede">تمرین تایپ به بهبود املا کمک می‌کند و برنامهٔ مرور واژه‌ها را تغییر نمی‌دهد.</p>
       </header>
       <div className="practice-grid">
         <section className="panel">
-          <h3 className="eyebrow">حالت"</h3>
+          <h3 className="eyebrow">نوع تمرین</h3>
           <div className="mode-cards">
             {MODES.map(([k, name, desc, Icon]) => (
               <button key={k} className={`mode-card ${mode === k ? "is-on" : ""}`} onClick={() => setMode(k)} aria-pressed={mode === k}>
@@ -70,7 +70,7 @@ export function Practice() {
               </button>
             ))}
           </div>
-          <h3 className="eyebrow">واژه‌ها از</h3>
+          <h3 className="eyebrow">منبع واژه‌ها</h3>
           <div className="segmented segmented-wide">
             {SOURCES.map(([k, label]) => (
               <button key={k} className={source === k ? "is-on" : ""} onClick={() => setSource(k)} aria-pressed={source === k}>
@@ -82,7 +82,7 @@ export function Practice() {
             {pool.length
               ? source === "path"
                 ? "از ۴۰۰ واژه اول مسیر یادگیری، ۱۰ تا تصادفی انتخاب می‌شود."
-                : `قابل تمرین  ${pool.length} واژه؛ هر دور ۱۰ تا تصادفی.`
+                : `${pool.length} واژه آمادهٔ تمرین است؛ در هر دور ۱۰ واژه به‌صورت تصادفی انتخاب می‌شود.`
               : "اینجا هنوز واژه‌ای نیست؛ اول چندتا یاد بگیر یا منبع را عوض کن."}
           </p>
           <button className="btn btn-primary btn-xl" onClick={start} disabled={!pool.length}>
@@ -196,7 +196,7 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
         <div className="learn-progress">
           <span style={{ width: `${(i / entries.length) * 100}%` }} />
         </div>
-        <span className="typing-meter">
+        <span className="typing-meter" dir="ltr">
           <b>{m.wpm}</b> WPM · <b>{m.accuracy}%</b>
         </span>
       </header>
@@ -234,6 +234,8 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
         <input
           ref={input}
           className="typing-input"
+          dir="ltr"
+          lang="en"
           value={value}
           onChange={(ev) => onChange(ev.target.value)}
           autoFocus
@@ -244,7 +246,7 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
           aria-label="اینجا بنویس"
         />
         <p className="muted typing-help">
-          {mode === "dictation" ? "اگر واضح نبود «دوباره گوش کن» را بزن." : "مستقیم تایپ را شروع کن؛ با درست‌بودن همه، خودکار بعدی می‌رود."} شماره  {i + 1}/{entries.length} مورد
+          {mode === "dictation" ? "اگر واضح نبود «دوباره گوش کن» را بزن." : "تایپ را شروع کن؛ پس از نوشتن پاسخ درست، به مورد بعدی می‌روی."} شماره  {i + 1}/{entries.length} مورد
         </p>
       </section>
     </div>

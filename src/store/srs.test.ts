@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { isMastered, preview, Rating, review } from "./srs";
+import { formatInterval, isMastered, preview, Rating, review } from "./srs";
 
 const DAY = 86400000;
 
@@ -36,4 +36,11 @@ test("a lapse resets progress and counts the lapse", () => {
   assert.equal(c.lapses, 1);
   assert.ok(c.s < before);
   assert.equal(isMastered(c), false);
+});
+
+
+test("review intervals use Persian time units", () => {
+  assert.equal(formatInterval(0), "کمتر از ۱ دقیقه");
+  assert.equal(formatInterval(5 * 60_000), "5 دقیقه");
+  assert.equal(formatInterval(2 * 60 * 60_000), "2 ساعت");
 });

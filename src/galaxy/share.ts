@@ -1,7 +1,7 @@
 import { toast } from "../ui/Toast";
 
 const SERIF = '"Fraunces Variable", "Songti SC", "Noto Serif SC", Georgia, serif';
-const SANS = '-apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+const SANS = '"Vazirmatn Variable", Tahoma, sans-serif';
 
 /** "My word galaxy": the live render framed as a 4:5 poster. */
 export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total: number) {
@@ -12,7 +12,9 @@ export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total:
     c.width = W;
     c.height = H;
     const g = c.getContext("2d")!;
-    await document.fonts.load(`600 72px ${SERIF}`).catch(() => null);
+    g.direction = "ltr";
+    g.textAlign = "left";
+    await Promise.all([document.fonts.load(`600 72px ${SERIF}`), document.fonts.load(`600 76px ${SANS}`, "فارسی")]).catch(() => null);
     g.fillStyle = "#090c18";
     g.fillRect(0, 0, W, H);
     // Cover-fit the galaxy into the upper part of the poster.
@@ -27,15 +29,19 @@ export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total:
     g.fillStyle = fade;
     g.fillRect(0, 760, W, 330);
     const pad = 72;
+    g.save();
+    g.direction = "rtl";
+    g.textAlign = "right";
     g.fillStyle = "rgba(243,236,223,.62)";
     g.font = `500 28px ${SANS}`;
-    g.fillText("نقشه ستاره‌ای واژگان من", pad, 1110);
+    g.fillText("نقشهٔ ستاره‌ای واژگان من", W - pad, 1110);
     g.fillStyle = "#f3ecdf";
-    g.font = `600 76px ${SERIF}`;
-    g.fillText(`روشن‌شده  ${lit.toLocaleString()} ستاره`, pad, 1196);
+    g.font = `600 64px ${SANS}`;
+    g.fillText(`${lit.toLocaleString()} ستاره روشن شده`, W - pad, 1196);
     g.font = `400 28px ${SANS}`;
     g.fillStyle = "rgba(243,236,223,.6)";
-    g.fillText(`مجموعاً  ${total.toLocaleString()} واژه آیلتس · هر واژه‌ای که یاد بگیری، یک ستاره روشن می‌شود`, pad, 1248);
+    g.fillText(`از ${total.toLocaleString()} واژهٔ آیلتس · هر واژه یک ستاره`, W - pad, 1248);
+    g.restore();
     g.fillStyle = "rgba(243,236,223,.16)";
     g.fillRect(pad, H - 66, W - pad * 2, 1);
     g.fillStyle = "#f3ecdf";
@@ -44,7 +50,9 @@ export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total:
     g.font = `400 24px ${SANS}`;
     g.fillStyle = "rgba(243,236,223,.55)";
     const tag = "یک واژه، یک تصویر؛ آیلتس را روشن کن";
-    g.fillText(tag, W - pad - g.measureText(tag).width, H - 28);
+    g.direction = "rtl";
+    g.textAlign = "right";
+    g.fillText(tag, W - pad, H - 28);
     const blob = await new Promise<Blob | null>((r) => c.toBlob(r, "image/png"));
     if (!blob) throw new Error("no blob");
     const file = new File([blob], "word-atlas-galaxy.png", { type: "image/png" });

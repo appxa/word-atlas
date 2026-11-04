@@ -26,8 +26,8 @@ export function Pronounce({ entry, refw }: { entry: Entry; refw: WordRef | Entry
   const accent = useStore((s) => s.settings.accent);
   const both = entry.uk && entry.us && entry.uk !== entry.us;
   const items: ["uk" | "us", string, string][] = both
-    ? [["uk", "بر", entry.uk], ["us", "ام", entry.us]]
-    : [[accent, accent === "uk" ? "بر" : "ام", entry.uk || entry.us]];
+    ? [["uk", "بریتانیا", entry.uk], ["us", "آمریکا", entry.us]]
+    : [[accent, accent === "uk" ? "بریتانیا" : "آمریکا", entry.uk || entry.us]];
   if (!both && items[0][2] === "") return null;
   return (
     <div className="pron">
@@ -64,19 +64,19 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
     const hit = atlas.words.find((x) => x.word.toLowerCase() === w);
     return { label: f, id: hit?.id };
   });
-  const status = card ? (isMastered(card) ? "تسلط‌یافته"  : "در حال یادگیری")  : null;
+  const status = card ? (isMastered(card) ? "یادگرفته‌شده"  : "در حال یادگیری")  : null;
 
   return (
     <article className={`entry entry-${mode}`}>
       <div className="entry-art">
-        <Illustration src={atlas.img(entry)} word={entry.w} topic={topicIdx} eager={eager} alt={`${entry.w} تصویرسازی`} />
+        <Illustration src={atlas.img(entry)} word={entry.w} topic={topicIdx} eager={eager} alt={`تصویر ${entry.w}`} />
       </div>
       <div className="entry-body">
         <header className="entry-head">
           <div className="entry-tags">
             <span className={`chip chip-level lv-${entry.cefr}`}>{entry.cefr}</span>
             {topic && <span className="chip">{topic[1]}</span>}
-            {status && <span className={`chip chip-status ${status === "تسلط‌یافته"  ? "is-done" : ""}`}>{status}</span>}
+            {status && <span className={`chip chip-status ${status === "یادگرفته‌شده"  ? "is-done" : ""}`}>{status}</span>}
           </div>
           {mode === "detail" && (
             <div className="entry-actions">
@@ -194,7 +194,7 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
 
         {mode === "detail" && card && (
           <p className="memory-note">
-            {card.due <= Date.now() ? "حالا آماده مرور است"  : `مرور بعدی  ${formatInterval(card.due - Date.now())}بعد`} · پایداری حافظه  {card.s < 1 ? "<1" : Math.round(card.s)} روز · مرورشده  {card.reps} بار
+            {card.due <= Date.now() ? "حالا آماده مرور است"  : `مرور بعدی: ${formatInterval(card.due - Date.now())} دیگر`} · پایداری حافظه  {card.s < 1 ? "<1" : Math.round(card.s)} روز · مرورشده  {card.reps} بار
           </p>
         )}
       </div>

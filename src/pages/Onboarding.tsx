@@ -5,9 +5,9 @@ import { store } from "../store/store";
 
 const LEVELS = [
   ["A2", "پایه", "واژه‌های روزمره‌ات هنوز محکم نیست"],
-  ["B1", "میانی", "هدف ۵.۵  – 6 نمره"],
-  ["B2", "متوسط-بالا", "هدف ۶.۵  – 7 نمره"],
-  ["C1", "پیشرفته", "هدف بالای ۷.۵"],
+  ["B1", "میانی", "هدف نمرهٔ ۵٫۵ تا ۶"],
+  ["B2", "متوسط-بالا", "هدف نمرهٔ ۶٫۵ تا ۷"],
+  ["C1", "پیشرفته", "هدف نمرهٔ بالاتر از ۷٫۵"],
 ];
 
 export function Onboarding() {
@@ -39,7 +39,7 @@ export function Onboarding() {
             </div>
           </fieldset>
           <fieldset>
-            <legend>روزی چند ستاره تازه روشن کنی؟</legend>
+            <legend>هر روز چند واژهٔ جدید یاد بگیری؟</legend>
             <div className="segmented segmented-wide">
               {[5, 10, 15, 20].map((n) => (
                 <button key={n} className={goal === n ? "is-on" : ""} onClick={() => setGoal(n)} aria-pressed={goal === n}>
@@ -51,7 +51,7 @@ export function Onboarding() {
           <button className="btn btn-primary btn-xl" onClick={finish}>
             شروع  <ArrowRight size={20} />
           </button>
-          <p className="muted">ثبت‌نام لازم نیست. پیشروی فقط روی همین دستگاه می‌ماند و هر وقت بخواهی از «پروفایل» تغییرش می‌دهی.</p>
+          <p className="muted">ثبت‌نام لازم نیست. پیشرفتت فقط روی همین دستگاه ذخیره می‌شود. هر زمان بخواهی می‌توانی تنظیمات را در «پروفایل» تغییر دهی.</p>
         </div>
       </div>
     </div>
