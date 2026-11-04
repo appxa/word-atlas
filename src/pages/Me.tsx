@@ -44,7 +44,7 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
   const restore = async (f: File) => {
     if (f.size > 30 * 1024 * 1024) return toast("فایل خیلی بزرگ است؛ شبیه پشتیبان یادگیری نیست.", "warn");
     const r = importBackup(await f.text());
-    toast(r.ok ? `بازیابی شد  ${r.cards} واژه در حافظه` : r.error, r.ok ? "ok" : "warn");
+    toast(r.ok ? `پیشرفت ${r.cards} واژه بازیابی شد` : r.error, r.ok ? "ok" : "warn");
   };
   const maxF = Math.max(1, ...stats.forecast);
 
@@ -91,7 +91,7 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
         <section className="panel">
           <h3 className="eyebrow">۲۰ هفته گذشته</h3>
           <Heatmap days={progress.days} />
-          <p className="muted">هر خانه یک روز است؛ رنگ تیره‌تر یعنی پاسخ بیشتری آن روز دادی. «بلندمدت به‌خاطرسپاری» یعنی پایداری حافظه بالای ۲۱ روز.</p>
+          <p className="muted">هر خانه نشان‌دهندهٔ یک روز است؛ رنگ پررنگ‌تر یعنی پاسخ‌های بیشتر. حافظهٔ بلندمدت یعنی پایداری حافظه بیش از ۲۱ روز.</p>
         </section>
 
         <section className="panel">
@@ -118,7 +118,7 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
               ))}
             </div>
           </Field>
-          <Field label="از چه سطحی شروع کنی" hint="واژه‌های ساده‌ای که می‌دانی رد می‌شود.">
+          <Field label="سطح شروع" hint="واژه‌های ساده‌ای که می‌دانی رد می‌شود.">
             <div className="segmented">
               {atlas.cefr.map((l, i) => (
                 <button key={l} className={settings.startLevel === i ? "is-on" : ""} onClick={() => set({ startLevel: i })}>
@@ -127,7 +127,7 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
               ))}
             </div>
           </Field>
-          <Field label="نرخ هدف حافظه" hint="هرچه بالاتر، مرور بیشتر. ۹۰٪ انتخاب بیشتر افراد است.">
+          <Field label="نرخ یادآوری هدف" hint="هرچه بالاتر، مرور بیشتر. ۹۰٪ انتخاب بیشتر افراد است.">
             <div className="segmented">
               {[0.85, 0.9, 0.95].map((n) => (
                 <button key={n} className={settings.retention === n ? "is-on" : ""} onClick={() => set({ retention: n })}>
@@ -181,20 +181,20 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
 
         <section className="panel">
           <h3 className="eyebrow">داده‌ها</h3>
-          <p className="muted">：，。，خروجی پشتیبان。</p>
+          <p className="muted">پیشرفتت فقط در مرورگر همین دستگاه ذخیره می‌شود. برای انتقال به دستگاه دیگر، ابتدا نسخهٔ پشتیبان بگیر و سپس آن را بازیابی کن.</p>
           {saveError && <p className="warn-text">مرورگر اجازه ذخیره نداد (احتمالاً حالت ناشناس یا پرشدن فضا). هرچه زودتر پشتیبان بگیر.</p>}
           <div className="data-actions">
             <button className="btn btn-ghost" onClick={download}>
-              <Download size={18} /> خروجی پشتیبان
+              <Download size={18} /> دریافت نسخهٔ پشتیبان
             </button>
             <button className="btn btn-ghost" onClick={() => file.current?.click()}>
-              <Upload size={18} /> ورود پشتیبان
+              <Upload size={18} /> بازیابی نسخهٔ پشتیبان
             </button>
             <input ref={file} type="file" accept="application/json,.json" hidden onChange={(e) => e.target.files?.[0] && restore(e.target.files[0]).finally(() => (e.target.value = ""))} />
             <button
               className="btn btn-ghost btn-danger"
               onClick={() => {
-                if (confirm("？，خروجی پشتیبان。")) {
+                if (confirm("همهٔ سوابق یادگیری این واژه‌نامه پاک شوند؟ این کار قابل بازگشت نیست. بهتر است ابتدا نسخهٔ پشتیبان بگیری.")) {
                   resetProgress();
                   toast("سابقه یادگیری پاک شد");
                 }

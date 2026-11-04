@@ -11,11 +11,12 @@ import { Galaxy } from "../galaxy/Galaxy";
 import { Highlight, Pronounce } from "../ui/EntryView";
 import { Illustration } from "../ui/Illustration";
 import { Ring } from "../ui/Ring";
+import { formatPersianDate, shortWeekday } from "../lib/date";
 
 const BRAND = `${import.meta.env.BASE_URL}brand`;
 
 function greeting(h: number) {
-  if (h < 5) return "شب عمیق است";
+  if (h < 5) return "هنوز بیداری؟ شب بخیر";
   if (h < 11) return "صبح بخیر";
   if (h < 14) return "ظهر بخیر";
   if (h < 18) return "عصر بخیر";
@@ -67,7 +68,7 @@ export function Today() {
     const d = new Date();
     d.setDate(d.getDate() - (6 - i));
     const k = dayKey(d);
-    return { k, label: "ی د س چ پ ج ش"[d.getDay()], v: progress.days[k]?.r ?? 0, today: i === 6 };
+    return { k, label: shortWeekday(d), v: progress.days[k]?.r ?? 0, today: i === 6 };
   });
 
   const learned = Object.keys(progress.cards).length;
@@ -78,9 +79,9 @@ export function Today() {
     <div className="page today">
       <header className="greet">
         <p className="eyebrow">
-          {now.getMonth() + 1}ماه{now.getDate()}روز · هفته{"ی د س چ پ ج ش"[now.getDay()]}
+          {formatPersianDate(now)}
         </p>
-        <h1 className="display">{greeting(now.getHours())}，کاوشگر.</h1>
+        <h1 className="display">{greeting(now.getHours())}، کاوشگر!</h1>
       </header>
 
       <section className={`journey ${total === 0 && !active ? "is-clear" : ""}`}>
@@ -92,7 +93,7 @@ export function Today() {
               <h2>
                 باقی‌مانده  <b>{active.steps.length - active.index}</b> قدم
               </h2>
-              <p className="journey-lede">پیشروی ذخیره شد؛ هر وقت خواستی ادامه بده.</p>
+              <p className="journey-lede">پیشرفتت ذخیره شده؛ هر وقت خواستی ادامه بده.</p>
             </>
           ) : total > 0 ? (
             <>
@@ -116,7 +117,7 @@ export function Today() {
             <>
               <p className="eyebrow eyebrow-light">امروز تمام شد</p>
               <h2>ستاره‌های امروز همه روشن شدند.</h2>
-              <p className="journey-lede">حافظه کمی جا خالی می‌خواهد. اگر خواستی بیشتر برو، اشکالی ندارد.</p>
+              <p className="journey-lede">برای امروز کارت تمام است. اگر دوست داری، می‌توانی بیشتر تمرین کنی.</p>
             </>
           )}
           {teaser.length > 0 && (
@@ -158,7 +159,7 @@ export function Today() {
           <div className="panel-head">
             <h3 className="eyebrow">این هفته</h3>
             <span className={`streak ${streak ? "is-on" : ""}`}>
-              <Flame size={16} /> پیوسته  {streak} روز
+              <Flame size={16} /> {streak} روز پیاپی
             </span>
           </div>
           <div className="streak-body">
@@ -181,7 +182,7 @@ export function Today() {
               <dd>{learned.toLocaleString()}</dd>
             </div>
             <div>
-              <dt>تسلط‌یافته</dt>
+              <dt>یادگرفته‌شده</dt>
               <dd>{mastered.toLocaleString()}</dd>
             </div>
             <div>
@@ -218,7 +219,7 @@ function GalaxyPanel({ learned, total }: { learned: number; total: number }) {
         <h3>
           روشن‌شده <b>{learned.toLocaleString()}</b> ستاره
         </h3>
-        <p>{learned ? `همچنین  ${(total - learned).toLocaleString()} ستاره منتظرت است. طلایی‌ها امروز تازه روشن شده‌اند.` : `${total.toLocaleString()} واژه؛ ${total.toLocaleString()} ستاره. هر واژه‌ای که یاد بگیری، یکی روشن می‌شود.`}</p>
+        <p>{learned ? `هنوز ${(total - learned).toLocaleString()} ستاره منتظرت است. طلایی‌ها امروز تازه روشن شده‌اند.` : `${total.toLocaleString()} واژه؛ ${total.toLocaleString()} ستاره. هر واژه‌ای که یاد بگیری، یکی روشن می‌شود.`}</p>
         <span className="btn btn-glass">
           ورود به نقشه ستاره‌ای  <ArrowRight size={18} />
         </span>
@@ -283,7 +284,7 @@ function LevelPath() {
       <div className="panel-head">
         <h3 className="eyebrow">مسیر یادگیری · از A1 تا C2</h3>
         <span className="legend">
-          <i className="lg-seen" /> یادگرفته  <i className="lg-done" /> تسلط‌یافته
+          <i className="lg-seen" /> یادگرفته  <i className="lg-done" /> یادگرفته‌شده
         </span>
       </div>
       <ol className="route">
@@ -292,7 +293,7 @@ function LevelPath() {
           const done = l.mastered / Math.max(1, l.total);
           return (
             <li key={l.name} className={`${i === start ? "is-start" : ""} ${l.seen ? "is-on" : ""}`}>
-              <button onClick={() => go({ page: "atlas", level: l.name })} aria-label={`${l.name} ${NAMES[i]}，یادگرفته  ${l.seen} / ${l.total}`}>
+              <button onClick={() => go({ page: "atlas", level: l.name })} aria-label={`${l.name} ${NAMES[i]}، یادگرفته‌شده ${l.seen} از ${l.total}`}>
                 <span className="station" style={{ "--seen": seen, "--done": done } as React.CSSProperties}>
                   <b>{l.name}</b>
                 </span>
@@ -323,7 +324,7 @@ function Topics() {
       <div className="panel-head">
         <h3 className="eyebrow">کاوش بر اساس موضوع آیلتس</h3>
         <button className="link" onClick={() => go({ page: "atlas" })}>
-          بازکردن واژه‌نامه
+          باز کردن واژه‌نامه
         </button>
       </div>
       <ul className="topic-tiles">

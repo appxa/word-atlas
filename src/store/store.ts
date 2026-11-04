@@ -305,7 +305,7 @@ export function importBackup(text: string): { ok: true; cards: number } | { ok: 
   if (!isObj(data) || data.app !== "word-atlas" || data.version !== 2 || !isObj(data.progress))
     return { ok: false, error: "این پشتیبان یادگیری واژه‌نگار نیست."  };
   const id = state.progress.datasetId;
-  if (data.progress.datasetId !== id) return { ok: false, error: "پشتیبان از واژه‌نامه دیگری است؛ اول به واژه‌نامه مربوطه سوییچ کن."  };
+  if (data.progress.datasetId !== id) return { ok: false, error: "پشتیبان از واژه‌نامه دیگری است؛ ابتدا به واژه‌نامهٔ مربوطه برو."  };
   const progress = sanitizeProgress({ ...data.progress, session: null }, id);
   state = { ...state, progress, settings: { ...sanitizeSettings(data.settings), onboarded: true } };
   emit();

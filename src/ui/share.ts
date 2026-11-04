@@ -2,7 +2,7 @@ import type { Atlas, Entry } from "../atlas/types";
 import { toast } from "./Toast";
 
 const SERIF = '"Fraunces Variable", "Songti SC", "Noto Serif SC", Georgia, serif';
-const SANS = '-apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif';
+const SANS = '"Vazirmatn Variable", Tahoma, sans-serif';
 
 function loadImage(src: string) {
   return new Promise<HTMLImageElement>((resolve, reject) => {
@@ -14,7 +14,7 @@ function loadImage(src: string) {
 }
 
 function wrap(ctx: CanvasRenderingContext2D, text: string, maxWidth: number) {
-  const tokens = /[ا-ی]/.test(text) ? Array.from(text) : text.split(/(\s+)/);
+  const tokens = text.split(/(\s+)/);
   const lines: string[] = [];
   let line = "";
   for (const t of tokens) {
@@ -45,7 +45,9 @@ export async function renderWordCard(atlas: Atlas, e: Entry) {
   c.width = W;
   c.height = H;
   const ctx = c.getContext("2d")!;
-  await Promise.all([document.fonts.load(`600 120px ${SERIF}`), document.fonts.load(`italic 400 40px ${SERIF}`)]).catch(() => null);
+  ctx.direction = "ltr";
+  ctx.textAlign = "left";
+  await Promise.all([document.fonts.load(`600 120px ${SERIF}`), document.fonts.load(`italic 400 40px ${SERIF}`), document.fonts.load(`600 40px ${SANS}`, "فارسی")]).catch(() => null);
 
   ctx.fillStyle = "#F3ECDF";
   ctx.fillRect(0, 0, W, H);
@@ -75,7 +77,7 @@ export async function renderWordCard(atlas: Atlas, e: Entry) {
   y += 62;
   ctx.font = `400 34px ${SANS}`;
   ctx.fillStyle = "#6B6F80";
-  ctx.fillText([e.uk && `بر  ${e.uk}`, e.us && e.us !== e.uk && `ام  ${e.us}`].filter(Boolean).join("    "), pad, y);
+  ctx.fillText([e.uk && `UK ${e.uk}`, e.us && e.us !== e.uk && `US ${e.us}`].filter(Boolean).join("    "), pad, y);
   y += 72;
   ctx.font = `600 40px ${SANS}`;
   ctx.fillStyle = "#1E2640";
@@ -86,7 +88,11 @@ export async function renderWordCard(atlas: Atlas, e: Entry) {
   const posW = ctx.measureText(s0.pos + "  ").width;
   ctx.fillStyle = "#1E2640";
   ctx.font = `600 40px ${SANS}`;
-  ctx.fillText(e.senses.slice(0, 2).map((s) => s.zh).join("；"), pad + posW, y);
+  ctx.save();
+  ctx.direction = "rtl";
+  ctx.textAlign = "right";
+  ctx.fillText(e.senses.slice(0, 2).map((s) => s.zh).join("؛ "), W - pad, y, art - posW);
+  ctx.restore();
   y += 76;
   if (e.ex[0]) {
     ctx.font = `italic 400 36px ${SERIF}`;
@@ -97,10 +103,14 @@ export async function renderWordCard(atlas: Atlas, e: Entry) {
     }
     ctx.font = `400 30px ${SANS}`;
     ctx.fillStyle = "#7A7C88";
+    ctx.save();
+    ctx.direction = "rtl";
+    ctx.textAlign = "right";
     for (const line of wrap(ctx, e.ex[0].zh, art).slice(0, 2)) {
-      ctx.fillText(line, pad, y + 6);
+      ctx.fillText(line, W - pad, y + 6);
       y += 44;
     }
+    ctx.restore();
   }
   ctx.fillStyle = "rgba(30,38,64,.14)";
   ctx.fillRect(pad, H - 120, art, 2);
@@ -110,7 +120,9 @@ export async function renderWordCard(atlas: Atlas, e: Entry) {
   ctx.font = `400 26px ${SANS}`;
   ctx.fillStyle = "#7A7C88";
   const tag = "یک واژه، یک تصویر؛ آیلتس را روشن کن";
-  ctx.fillText(tag, W - pad - ctx.measureText(tag).width, H - 64);
+  ctx.direction = "rtl";
+    ctx.textAlign = "right";
+    ctx.fillText(tag, W - pad, H - 64);
   return c;
 }
 

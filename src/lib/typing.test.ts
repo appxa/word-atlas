@@ -54,7 +54,7 @@ test("IME commits or multi-character replacements are assessed as one insertion"
     total: 0,
     correct: 0,
   });
-  assert.deepEqual(typingDelta("", "سلام", "hello"), { total: 2, correct: 0 });
+  assert.deepEqual(typingDelta("", "سلام", "hello"), { total: 4, correct: 0 });
 });
 
 test("WPM uses five characters per word and excludes discarded error characters", () => {

@@ -16,7 +16,7 @@ const STATUS: [Status, string][] = [
   ["all", "همه"],
   ["new", "نیاموخته"],
   ["learning", "در حال یادگیری"],
-  ["mastered", "تسلط‌یافته"],
+  ["mastered", "یادگرفته‌شده"],
   ["saved", "علاقه‌مندی"],
 ];
 
@@ -99,12 +99,12 @@ export function AtlasPage({
         <div>
           <p className="eyebrow">واژه‌نامه ·  {atlas.count.toLocaleString()} واژه</p>
           <h1 className="display">
-            هر واژه، 
+            هر واژه، {" "}
             <br className="br-sm" />
             یک تصویر دارد.
           </h1>
           <p className="lede">
-            {atlas.examples.toLocaleString()} مثال اورجینال · تلفظ بریتیش/امریکن · بر اساس سطح و  {atlas.topics.length} موضوع آیلتس مرتب شده
+            {atlas.examples.toLocaleString()} مثال · تلفظ بریتانیایی و آمریکایی · دسته‌بندی بر اساس سطح و {atlas.topics.length} موضوع آیلتس
           </p>
         </div>
         <label className="search">
@@ -112,7 +112,7 @@ export function AtlasPage({
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="جستجوی واژه یا معنی فارسی"
+            placeholder="جست‌وجوی واژه یا معنی فارسی"
             spellCheck={false}
             autoComplete="off"
           />
@@ -188,7 +188,7 @@ export function AtlasPage({
           )}
           <span className="result-count">
             {view === "galaxy"
-              ? "واژه‌ای را جستجو کن؛ نقشه ستاره‌ای می‌بردت پیشش"
+              ? "واژه‌ای را جست‌وجو کن تا آن را در نقشهٔ ستاره‌ای پیدا کنی"
               : `${list.length.toLocaleString()} نتیجه`}
           </span>
           <div

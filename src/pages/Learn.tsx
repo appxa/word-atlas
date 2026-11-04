@@ -235,7 +235,7 @@ function Quiz({ step, session }: { step: Step & { kind: QuizKind }; session: Act
               <li key={o.id}>
                 <button className={`option ${cls}`} data-option={o.id} onClick={() => submit(o.id, isAnswer)} disabled={!!pending}>
                   <kbd>{i + 1}</kbd>
-                  <span lang={step.kind === "meaning" ? "zh" : "en"}>{step.kind === "meaning" ? o.zh : o.word}</span>
+                  <span lang={step.kind === "meaning" ? "fa" : "en"}>{step.kind === "meaning" ? o.zh : o.word}</span>
                   {pending && isAnswer && <Check size={20} className="option-mark" />}
                   {pending && chosen && !isAnswer && <X size={20} className="option-mark" />}
                 </button>
@@ -307,6 +307,8 @@ function SpellInput({ entry, pending, hints, onHint, onSubmit }: { entry: Entry;
       <input
         ref={input}
         className="spell-input"
+        dir="ltr"
+        lang="en"
         value={shown}
         onChange={(e) => !pending && setValue(e.target.value.slice(0, target.length + 6))}
         autoFocus
@@ -388,10 +390,10 @@ function Summary({ session }: { session: ActiveSession }) {
       <div className="summary-card">
         <div className="summary-sky">
           <Galaxy mode="mini" highlight={words.map((w) => w.id)} ignite />
-          <p>امروز روشن شد  {words.length} ستاره</p>
+          <p>امروز {words.length} ستاره روشن کردی</p>
         </div>
         <p className="eyebrow">این سفر تمام شد</p>
-        <h1 className="display">{stats.accuracy >= 90 ? "سفر قشنگی بود."  : stats.accuracy >= 60 ? "محکم جلو رفتید."  : "آن‌هایی که از دستشان دادی، دوباره می‌بینیشان."}</h1>
+        <h1 className="display">{stats.accuracy >= 90 ? "سفر قشنگی بود."  : stats.accuracy >= 60 ? "خوب پیش رفتی."  : "آن‌هایی که از دستشان دادی، دوباره می‌بینیشان."}</h1>
         <div className="summary-stats">
           <Ring value={stats.accuracy / 100} size={128} tone={stats.accuracy >= 60 ? "sage" : "terra"}>
             <b>{stats.accuracy}%</b>
@@ -424,7 +426,7 @@ function Summary({ session }: { session: ActiveSession }) {
             </li>
           ))}
         </ul>
-        <p className="summary-note">FSRS زمان دیدار بعدی هر واژه تنظیم شد. واژه‌های اشتباه زودتر برمی‌گردند.</p>
+        <p className="summary-note">الگوریتم FSRS زمان مرور بعدی هر واژه را تنظیم کرده است. واژه‌هایی که اشتباه پاسخ دادی زودتر برمی‌گردند.</p>
         <div className="summary-actions">
           {wrong.length > 0 && (
             <button className="btn btn-ghost" onClick={again}>
@@ -435,7 +437,7 @@ function Summary({ session }: { session: ActiveSession }) {
             <Share2 size={18} /> اشتراک کارت امتیاز
           </button>
           <button className="btn btn-primary btn-xl" onClick={done} ref={(b) => b?.focus({ preventScroll: true })}>
-            تمام  <ArrowRight size={20} />
+            پایان  <ArrowRight size={20} />
           </button>
         </div>
       </div>
