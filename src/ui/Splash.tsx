@@ -71,7 +71,7 @@ function targets(w: number, h: number, count: number) {
   g.closePath();
   g.fill();
   const zh = Math.min(w * 0.3, s * 0.24);
-  g.font = `700 ${zh}px "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", serif`;
+  g.font = `700 ${zh * 0.65}px "Vazirmatn Variable", Tahoma, sans-serif`;
   g.textAlign = "center";
   g.textBaseline = "middle";
   g.fillText("واژه‌نگار", cx, cy + R + zh * 0.78);
