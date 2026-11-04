@@ -3,7 +3,9 @@ import "@fontsource-variable/fraunces/opsz-italic.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
+import "./styles/vazirmatn.css";
 import "./styles/app.css";
+import "./styles/persian.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

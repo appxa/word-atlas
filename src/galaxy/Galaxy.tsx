@@ -341,7 +341,7 @@ export function Galaxy({
           </li>
           <li>
             <i className="lg-mastered" />
-            تسلط‌یافته
+            یادگرفته‌شده
           </li>
         </ul>
       </div>
@@ -374,7 +374,7 @@ export function Galaxy({
               if (store.get().settings.sfx) void cue("fly");
             }
           }}
-          aria-label="پرتاب به یک ستاره روشن"
+          aria-label="رفتن به یک ستارهٔ روشن"
         >
           <Crosshair size={17} />
         </button>

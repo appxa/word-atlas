@@ -128,7 +128,7 @@ function Shell({ privateAvailable }: { privateAvailable: boolean }) {
           <a className="topbar-logo" href="#/" aria-label="صفحه اصلی Word Atlas">
             <Logo />
           </a>
-          <nav className="topnav" aria-label="ناوبری اصلی">
+          <nav className="topnav" aria-label="منوی اصلی">
             {NAV.map(({ page, label }) => (
               <a key={page} href={page === "today" ? "#/" : `#/${page}`} className={route.page === page ? "is-on" : ""} aria-current={route.page === page ? "page" : undefined}>
                 {label}
@@ -136,9 +136,9 @@ function Shell({ privateAvailable }: { privateAvailable: boolean }) {
             ))}
           </nav>
           <div className="topbar-tools">
-            <button className="search-pill" onClick={() => setPalette(true)} aria-label="جستجوی واژه">
+            <button className="search-pill" onClick={() => setPalette(true)} aria-label="جست‌وجوی واژه">
               <Search size={17} />
-              <span>جستجوی واژه</span>
+              <span>جست‌وجوی واژه</span>
               <kbd>⌘K</kbd>
             </button>
             <AmbiencePicker />
@@ -175,7 +175,7 @@ function Shell({ privateAvailable }: { privateAvailable: boolean }) {
       )}
 
       {!focus && (
-        <nav className="tabbar" aria-label="ناوبری اصلی">
+        <nav className="tabbar" aria-label="منوی اصلی">
           {NAV.map(({ page, label, icon: Icon }) => (
             <a key={page} href={page === "today" ? "#/" : `#/${page}`} className={route.page === page ? "is-on" : ""} aria-current={route.page === page ? "page" : undefined}>
               <Icon size={22} strokeWidth={route.page === page ? 2.1 : 1.7} />
@@ -222,7 +222,7 @@ function WordSheet({ id }: { id: string | null }) {
     return () => window.removeEventListener("keydown", on);
   }, [id, neighbor]);
   return (
-    <Sheet open={!!id} onClose={closeWord} label={ref ? `${ref.word} واژه` : "واژه"} wide>
+    <Sheet open={!!id} onClose={closeWord} label={ref ? `واژهٔ ${ref.word}` : "واژه"} wide>
       {entry ? (
         <EntryView key={entry.id} entry={entry} />
       ) : error ? (
